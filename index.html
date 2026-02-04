@@ -1,162 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For Aaditya 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aaditya Tidke 💖</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
+.card {
+    background: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    display: none;
+}
 
-    h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.8rem;
-      margin-top: 40px;
-    }
+.card.active {
+    display: block;
+}
 
-    h2 {
-      margin-top: 40px;
-      font-size: 1.8rem;
-    }
+h1 {
+    color: #ff4d6d;
+}
 
-    p {
-      font-size: 1.1rem;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
+p {
+    color: #444;
+    font-size: 16px;
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      margin: 20px;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
 
-    button {
-      background: #ff4d6d;
-      border: none;
-      color: white;
-      padding: 14px 28px;
-      font-size: 1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: 0.3s;
-    }
+button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
 
-    button:hover {
-      background: #ff1e4d;
-      transform: scale(1.05);
-    }
+button:hover {
+    background: #e63b5c;
+}
 
-    .hidden {
-      display: none;
-      margin-top: 20px;
-      font-size: 1.1rem;
-    }
-
-    .heart {
-      position: fixed;
-      top: -10px;
-      font-size: 20px;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(110vh);
-        opacity: 0;
-      }
-    }
-
-    footer {
-      margin: 40px 0 20px;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-  </style>
+.no-btn {
+    background: #777;
+    position: fixed;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>Hi Aaditya 😌💖</h1>
-  <p>Welcome to a tiny corner of the internet made just to make you smile.</p>
+<!-- BACKGROUND MUSIC -->
+<audio autoplay loop>
+  <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Komiku/Love/Komiku_-_12_-_Friends.mp3" type="audio/mpeg">
+</audio>
 
-  <div class="card">
-    <h2>Why You’re Special ❤️</h2>
+<!-- PAGE 1 -->
+<div class="card active" id="page1">
+    <h1>Hey Aaditya 💕</h1>
+    <p>Login karo cutie 😌<br>Type this 👇</p>
+    <input type="text" placeholder="I love you ❤️">
+    <button onclick="nextPage(2)">Enter 😘</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="card" id="page2">
+    <h1>Hmm 😏</h1>
+    <p>Good boy 💖<br>Ek aur secret bolo</p>
+    <input type="password" placeholder="kiss me 😘">
+    <button onclick="nextPage(3)">Next 😈</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="card" id="page3">
+    <h1>My Aaditya 🥺❤️</h1>
     <p>
-      You make my heart feel calm and excited at the same time.  
-      Being with you feels safe, warm… and a little addictive 😏  
-      Loving you is honestly the easiest thing I’ve ever done.
+        You are my safe place,<br>
+        my smile,<br>
+        my favorite human 💗
     </p>
-  </div>
+    <button onclick="nextPage(4)">One last thing 💌</button>
+</div>
 
-  <div class="card">
-    <h2>Things You Do To Me 😌</h2>
-    <p>• You change my mood the moment I think of you 💭</p>
-    <p>• You distract me without even trying 😏</p>
-    <p>• You make me smile like an idiot 😄</p>
-    <p>• You’re my favorite kind of trouble 😈💞</p>
-  </div>
+<!-- PAGE 4 : PROPOSAL -->
+<div class="card" id="page4">
+    <h1>Serious Question 💍</h1>
+    <p>Aaditya Tidke,<br>Will you be my Valentine? 💖</p>
 
-  <div class="card">
-    <h2>Quick Question 😄</h2>
-    <button onclick="showSmile()">Are you smiling right now?</button>
-    <p id="smileText" class="hidden">
-      Good 😌  
-      Because making you smile is my favorite achievement 💕
+    <button onclick="yesClicked()">YES 😍</button>
+    <button class="no-btn" onmouseover="runAway()">NO 🙄</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="card" id="page5">
+    <h1>YAYYYYY 🎉💖</h1>
+    <p>
+        I knew it 😘<br><br>
+        Happy Valentine’s Day my love ❤️<br>
+        Always yours 💞
     </p>
-  </div>
+</div>
 
-  <div class="card">
-    <h2>Just Between Us 💝</h2>
-    <button onclick="showSecret()">One Last Click</button>
-    <p id="secretText" class="hidden">
-      Aaditya… you have no idea how many plans I have with you 😏❤️  
-      And yes — you’re always my choice.
-    </p>
-  </div>
+<script>
+function nextPage(page) {
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('active');
+    });
+    document.getElementById('page' + page).classList.add('active');
+}
 
-  <footer>
-    Made with love, teasing, and a very happy heart 💖<br>
-    Only for Aaditya Tidke
-  </footer>
+function runAway() {
+    const btn = document.querySelector('.no-btn');
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
+}
 
-  <script>
-    function showSmile() {
-      document.getElementById("smileText").style.display = "block";
-    }
-
-    function showSecret() {
-      document.getElementById("secretText").style.display = "block";
-    }
-
-    // Floating hearts
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerHTML = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 6000);
-    }, 500);
-  </script>
+function yesClicked() {
+    nextPage(5);
+}
+</script>
 
 </body>
 </html>
